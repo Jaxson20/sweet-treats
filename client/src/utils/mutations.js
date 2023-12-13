@@ -34,6 +34,7 @@ export const CREATE_CHRISTMAS_ORDER = gql`
     $phoneNumber: Int
     $numberOfBoxes: Int!
     $specialMessage: String
+    
   ) {
     createChristmasOrder(
       firstName: $firstName

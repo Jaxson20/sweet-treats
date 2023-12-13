@@ -7,11 +7,11 @@ const typeDefs = `
   }
 
   type ChristmasOrder {
-    _id: ID!
+    _id: ID
     firstName: String!
     lastName: String!
     email: String!
-    phoneNumber: String
+    phoneNumber: Int
     numberOfBoxes: Int!
     specialMessage: String
     createdAt: String!
@@ -28,7 +28,7 @@ const typeDefs = `
   type Mutation {
     signin(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    createChristmasOrder(firstName: String!, lastName: String!, email: String!, phoneNumber: Int!, numberOfBoxes: Int!, specialMessage: String): ChristmasOrder
+    createChristmasOrder(firstName: String!, lastName: String!, email: String!, phoneNumber: Int, numberOfBoxes: Int!, specialMessage: String): ChristmasOrder
   }
 `;
 

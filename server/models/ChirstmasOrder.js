@@ -19,12 +19,12 @@ const ChristmasOrderSchema = new Schema({
     trim: true,
   },
   phoneNumber: {
-    type: Number,
+    type: String,
     required: false,
     trim: true,
   },
   numberOfBoxes: {
-    type: Number,
+    type: String,
     required: true,
   },
   specialMessage: {

@@ -15,5 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "develop": "^1.0.0",
+    "npm": "^10.2.5",
+    "run": "^1.4.0"
   }
 }

@@ -35,24 +35,26 @@ const resolvers = {
 
       return { token };
     },
-    createChristmasOrder: async (parent, {firstName, lastName, email, phoneNumber, numberOfBoxes, specialMessage }) => {
-      try {
-        const newChristmasOrder = new ChristmasOrder({
-          firstName,
-          lastName,
-          email,
-          phoneNumber,
-          numberOfBoxes,
-          specialMessage, 
-        });
-        const savedChristmasOrder = await newChristmasOrder.save();
-
-        return savedChristmasOrder;
-      } catch (error) {
-        console.error('Error creating Christmas order:', error);
-        throw new Error('Failed to create Christmas order');
-      }
+   createChristmasOrder: async (parent, { firstName, lastName, email, phoneNumber, numberOfBoxes, specialMessage }) => {
+    console.log('Resolver function started');
+    try {
+    
+    console.log('Received args:', firstName, lastName, email, phoneNumber, numberOfBoxes, specialMessage,);
+    const newChristmasOrder = await ChristmasOrder.create({
+      firstName,
+      lastName,
+      email,
+      phoneNumber: parseInt(phoneNumber),
+      numberOfBoxes: parseInt(numberOfBoxes),
+      specialMessage,
+    });
+    console.log('Order created successfully:', newChristmasOrder);
+    return newChristmasOrder;
+   } catch (error) {
+     console.error('Error creating Christmas order:', error);
+     throw new Error('Failed to create Christmas order');
     }
+   }
   }
 };
 
