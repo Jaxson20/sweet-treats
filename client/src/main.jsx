@@ -6,7 +6,8 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound.jsx'
 import Christmas from './pages/Christmas';
-
+import Aboutme from './pages/Aboutme';
+import Ingredients from './pages/Ingredients';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: '/Christmas',
         element: <Christmas />
+      },
+      {
+        path: '/Aboutme',
+        element: <Aboutme />
+      },
+      {
+        path: '/Ingredients',
+        element: <Ingredients />
       }
     ]
   }

@@ -20,13 +20,10 @@ export default function Nav() {
 
       <div>
         <nav>
-          {Auth.loggedIn() && (
-            <>
               <Link to="/">Home</Link>
-              <Link to="/profile">Profile</Link>
-              <div className="logout-link" onClick={() => Auth.logout()}>Logout</div>
-            </>
-          )}
+              <Link to="/profile">Orders</Link>  
+              <Link to="/Ingredients">Ingredients</Link>
+              <Link to="/Aboutme">About Me</Link>  
         </nav>
 
         <img

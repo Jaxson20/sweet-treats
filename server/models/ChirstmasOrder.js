@@ -22,6 +22,7 @@ const ChristmasOrderSchema = new Schema({
     type: String,
     required: false,
     trim: true,
+    match: /^[0-9-]+$/,
   },
   numberOfBoxes: {
     type: String,

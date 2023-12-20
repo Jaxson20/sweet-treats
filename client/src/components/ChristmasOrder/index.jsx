@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_CHRISTMAS_ORDER } from "../../utils/mutations";
 import { Card } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./style.scss";
 
 
@@ -74,7 +75,9 @@ const ChristmasOrder = () => {
         autoClose: 1500,
         onClose: () => {
           window.location.reload();
+          
         },
+        ClassName: 'toast-message'
       });
     } catch (err) {
       console.error(err);
@@ -115,7 +118,7 @@ const ChristmasOrder = () => {
                       />
                       <textarea
                         className="form-input"
-                        placeholder="323-654-7896"
+                        placeholder="323-654-7896 Please dont put - or ( )"
                         name="phoneNumber"
                         value={formState.phoneNumber}
                         onChange={handleChange}
