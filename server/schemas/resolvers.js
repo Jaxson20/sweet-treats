@@ -38,17 +38,13 @@ const resolvers = {
    createChristmasOrder: async (parent, { firstName, lastName, email, phoneNumber, numberOfBoxes, specialMessage }) => {
     console.log('Resolver function started');
     try {
-
-      if (/[()\-]/.test(phoneNumber)) {
-        throw new Error('Invalid phone number. Please provide a number without hyphens or parentheses.');
-      }
     
     console.log('Received args:', firstName, lastName, email, phoneNumber, numberOfBoxes, specialMessage,);
     const newChristmasOrder = await ChristmasOrder.create({
       firstName,
       lastName,
       email,
-      phoneNumber: parseInt(phoneNumber),
+      //phoneNumber: parseInt(phoneNumber),
       numberOfBoxes: parseInt(numberOfBoxes),
       specialMessage,
     });

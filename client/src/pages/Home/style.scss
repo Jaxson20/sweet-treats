@@ -2,12 +2,15 @@
     h1 {
         margin: 4rem auto;
         text-align: center;
+        font-family: cursive;
     }
     .Christams-logo {
         max-width: 500px;
         max-height: 500px;  
         margin: 0 auto;
         display: block;
+        border: 1px solid black;
+        box-sizing: border-box;
     }
 
 }

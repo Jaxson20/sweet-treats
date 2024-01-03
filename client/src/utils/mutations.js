@@ -31,7 +31,7 @@ export const CREATE_CHRISTMAS_ORDER = gql`
     $firstName: String!
     $lastName: String!
     $email: String!
-    $phoneNumber: Int
+    
     $numberOfBoxes: Int!
     $specialMessage: String
     
@@ -40,7 +40,7 @@ export const CREATE_CHRISTMAS_ORDER = gql`
       firstName: $firstName
       lastName: $lastName
       email: $email
-      phoneNumber: $phoneNumber
+  
       numberOfBoxes: $numberOfBoxes
       specialMessage: $specialMessage
     ) {
@@ -48,7 +48,7 @@ export const CREATE_CHRISTMAS_ORDER = gql`
       firstName
       lastName
       email
-      phoneNumber
+      
       numberOfBoxes
       specialMessage
       createdAt

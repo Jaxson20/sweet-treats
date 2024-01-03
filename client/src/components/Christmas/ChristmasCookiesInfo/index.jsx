@@ -1,4 +1,4 @@
-// ChristmasCookiesInfo.jsx
+
 
 import React from 'react';
 import './style.scss';

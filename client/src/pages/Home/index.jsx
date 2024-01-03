@@ -1,5 +1,5 @@
 import './style.scss';
-import Christmas from '../../assets/images/Christmas.png';
+import Christmas from '../../assets/images/christmas/Christmas.png';
 import { Link }  from 'react-router-dom'
 
 export default function Home() {

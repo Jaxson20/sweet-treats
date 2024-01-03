@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CREATE_CHRISTMAS_ORDER } from "../../utils/mutations";
+import { CREATE_CHRISTMAS_ORDER } from "../../../utils/mutations";
 import { Card } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./style.scss";
+//import PhoneNumberInput from "../Christmas/PNinput"
+import './style.scss'
+
 
 
 
@@ -53,7 +55,7 @@ const ChristmasOrder = () => {
           firstName: formState.firstName,
           lastName: formState.lastName,
           email: formState.email,
-          phoneNumber: parseInt(formState.phoneNumber),
+         // phoneNumber:parseInt(formState.phoneNumber),
           numberOfBoxes: parseInt(formState.numberOfBoxes),
           specialMessage: formState.specialMessage,
         },
@@ -65,7 +67,7 @@ const ChristmasOrder = () => {
         firstName: "",
         lastName: "",
         email: "",
-        phoneNumber: "",
+        //phoneNumber: "",
         numberOfBoxes: 0,
         specialMessage: "",
       });
@@ -116,17 +118,22 @@ const ChristmasOrder = () => {
                         value={formState.email}
                         onChange={handleChange}
                       />
-                      <textarea
+                     {/* <input
                         className="form-input"
                         placeholder="323-654-7896 Please dont put - or ( )"
                         name="phoneNumber"
                         value={formState.phoneNumber}
                         onChange={handleChange}
-                      />
+  /> 
+                      <PhoneNumberInput
+                        className="form-input"
+                        value={formState.phoneNumber}
+                        onChange={(formattedPhoneNumber) => handlePhoneNumberChange({ target: { value: formattedPhoneNumber } })}
+                      />*/}
                       <div className="number-counter">
                         <input
                           className="form-input counter-input"
-                          placeholder="# of Boxes"
+                          placeholder="# of Dozen"
                           name="numberOfBoxes"
                           type="number"
                           value={formState.numberOfBoxes}
@@ -135,7 +142,7 @@ const ChristmasOrder = () => {
                       </div>
                       <textarea
                         className="form-input"
-                        placeholder="Special request"
+                        placeholder="Special request/Phone number"
                         name="specialMessage"
                         value={formState.specialMessage}
                         onChange={handleChange}
