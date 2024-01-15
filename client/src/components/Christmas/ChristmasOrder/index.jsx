@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 //import PhoneNumberInput from "../Christmas/PNinput"
 import './style.scss'
+//import { sendOrderConfirmationEmail } from "../../SendGrid";
 
 
 
@@ -48,43 +49,41 @@ const ChristmasOrder = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
       const { data } = await ChristmasOrder({
         variables: {
           firstName: formState.firstName,
           lastName: formState.lastName,
           email: formState.email,
-         // phoneNumber:parseInt(formState.phoneNumber),
           numberOfBoxes: parseInt(formState.numberOfBoxes),
           specialMessage: formState.specialMessage,
         },
       });
-
+  
       console.log("Order Created:", data.ChristmasOrder);
-
+ 
       setFormState({
         firstName: "",
         lastName: "",
         email: "",
-        //phoneNumber: "",
         numberOfBoxes: 0,
         specialMessage: "",
       });
-
+  
       toast.success("Your Order has been created!", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 1500,
         onClose: () => {
           window.location.reload();
-          
         },
-        ClassName: 'toast-message'
+        ClassName: 'toast-message',
       });
     } catch (err) {
       console.error(err);
     }
   };
+  
 
   return (
     <Card className="ChristmasOrderCard">
