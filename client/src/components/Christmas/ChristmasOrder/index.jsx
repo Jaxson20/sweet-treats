@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 //import PhoneNumberInput from "../Christmas/PNinput"
 import './style.scss'
-//import { sendOrderConfirmationEmail } from "../../SendGrid";
+import { sendOrderConfirmationEmail } from "../../SendGrid";
 
 
 
@@ -63,6 +63,8 @@ const ChristmasOrder = () => {
   
       console.log("Order Created:", data.ChristmasOrder);
  
+      await sendOrderConfirmationEmail(data.ChristmasOrder, formState.email);
+
       setFormState({
         firstName: "",
         lastName: "",

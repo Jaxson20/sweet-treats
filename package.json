@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.0",
+    "cors": "^2.8.5",
     "develop": "^1.0.0",
     "dotenv": "^16.3.1",
     "npm": "^10.2.5",

@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const cors = require('cors');
 const path = require('path');
 const express = require('express');
 const { ApolloServer } = require('@apollo/server');
@@ -26,6 +26,8 @@ const startApolloServer = async () => {
     context: authMiddleware
   }));
 
+  app.use(cors());
+
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
@@ -42,4 +44,22 @@ const startApolloServer = async () => {
   });
 };
 
+app.post('/send-email', async (req, res) => {
+  const { to, subject, text } = req.body;
+
+  try {
+    await transporter.sendMail({
+      from: 'sweettreatsbyamber24',
+      to,
+      subject,
+      text,
+    });
+
+    res.status(200).json({ message: 'Email sent successfully!' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+
+});
 startApolloServer();
