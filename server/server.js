@@ -1,4 +1,5 @@
 require('dotenv').config();
+const nodemailer = require('nodemailer');
 const cors = require('cors');
 const path = require('path');
 const express = require('express');
@@ -8,6 +9,14 @@ const { expressMiddleware } = require('@apollo/server/express4');
 const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
+
+const transporter = nodemailer.createTransport({
+  service: 'SendGrid',
+  auth: {
+    user: 'apikey',
+    pass: process.env.SENDGRID_API_KEY,
+  },
+});
 
 const PORT = process.env.PORT || 3001;
 const app = express();
