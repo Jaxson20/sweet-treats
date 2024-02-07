@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         element: <Christmas />
       },
       {
+        path: '/Valentines',
+        element: <valentines />
+      },
+      {
         path: '/Aboutme',
         element: <Aboutme />
       },
