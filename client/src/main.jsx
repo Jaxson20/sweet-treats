@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound.jsx'
 import Christmas from './pages/Christmas';
+import Valentines from './pages/Valentines';
 import Aboutme from './pages/Aboutme';
 import Ingredients from './pages/Ingredients';
 import './index.css'
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/Valentines',
-        element: <valentines />
+        element: <Valentines />
       },
       {
         path: '/Aboutme',

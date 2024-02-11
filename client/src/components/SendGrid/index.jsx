@@ -29,4 +29,6 @@ const orderDetails = {
 const recipientEmail = 'customer@example.com'; 
 sendOrderConfirmationEmail(orderDetails, recipientEmail);
 
+
+
 export { sendOrderConfirmationEmail };
