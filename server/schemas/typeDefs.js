@@ -28,6 +28,7 @@ const typeDefs = `
     signin(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     createChristmasOrder(firstName: String!, lastName: String!, email: String!, numberOfBoxes: Int!, specialMessage: String): ChristmasOrder
+    createValentinesOrder(firstName: String!, lastName: String!, email: String!, numberOfBoxes: Int!, specialMessage: String): ValentinesOrder
   }
 `;
 module.exports = typeDefs;

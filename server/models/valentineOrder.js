@@ -40,4 +40,4 @@ const ValentineOrderSchema = new Schema({
 
 const ValentineOrder = mongoose.model('Valentine Order', ValentineOrderSchema);
 
-module.exports = ValentineOrder;
+module.exports = ValentinesOrder;
