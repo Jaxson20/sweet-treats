@@ -16,6 +16,16 @@ const typeDefs = `
     createdAt: String!
   }
 
+  type ValentinesOrder {
+    _id: ID
+    firstName: String!
+    lastName: String!
+    email: String!
+    numberOfBoxes: Int!
+    specialMessage: String
+    createdAt: String!
+  }
+
   type Auth {
     token: ID
   }
