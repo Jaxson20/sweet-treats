@@ -55,3 +55,33 @@ export const CREATE_CHRISTMAS_ORDER = gql`
     }
   }
 `;
+
+export const CREATE_VALENTINES_ORDER = gql`
+  mutation createValentinesOrder(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    
+    $numberOfBoxes: Int!
+    $specialMessage: String
+    
+  ) {
+    createChristmasOrder(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+  
+      numberOfBoxes: $numberOfBoxes
+      specialMessage: $specialMessage
+    ) {
+      _id
+      firstName
+      lastName
+      email
+      
+      numberOfBoxes
+      specialMessage
+      createdAt
+    }
+  }
+`;
